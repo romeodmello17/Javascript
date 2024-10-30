@@ -1,0 +1,32 @@
+this :
+    -this is a keyword used to represent current object in Global -> window object.
+    -Function : it will represent as owner of the Function.
+    -Arrow Function : it will represent
+
+
+
+object : 
+    -object is a collection of properties.
+    -Each propertie is represent by key and value pairs.
+    -We can create object by using 4 ways :
+        -Literal way : let obj ={
+            key : value;
+        };
+        -function construtor : function TocreateObject(a, b, c) {
+                         this.title = a;
+                         this.price = b;
+                         this.rating = c;
+                    }
+
+                    let obj4 = new TocreateObject("Motorola", 649000, 2);
+                    console.log(obj4);
+        -Class construtor : class ObjectinClass {
+                            constructor(title, price, rating) {
+                              this.title = title;
+                              this.price = price;
+                              this.rating = rating;
+                            }
+                        }
+                        let obj6= new ObjectinClass("Vivo",2340000,0.7);
+        -Object constructor : let obj9 = new Object();
+                            console.log(obj9);

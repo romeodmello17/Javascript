@@ -1,0 +1,24 @@
+How many ways we can declare a number?
+    -Two ways :
+        1. Literal way 
+            eg. let a = 50;
+        2. Number constructor
+            eg. let b = new Number(100);
+
+AutoBoxing:
+    - Generally primitive numbers are not having any methods.
+    - When we try to use any methods on primitive numbers, it will automatically convert to temporarily Number Object
+    - It will inherit properties from its prototye.
+
+Number Constructor Methods:
+    1. valueOf():
+        - it will return value of the number.
+    2. toString():
+        - it will convert the number to String.
+    3. toFixed():
+        - to Fix the number after decimal point.
+    4. toPrecision():
+        - to precise the whole number.
+    5. toExponential():
+        - it will convert number in power values
+

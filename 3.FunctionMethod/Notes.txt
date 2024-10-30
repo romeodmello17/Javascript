@@ -1,0 +1,13 @@
+call() , apply() ,bind() all these three methods are used to invoke  a function with specific this value along with other arguments.
+1. call() : 
+    -first argument is this value
+    -remaining arguments are given individually.
+    -it will invoke the function immediately.
+2. apply() :
+    -first argument is this value
+    -remaining arguments are given in the form of array.
+    -it will invoke the function immediately.
+3. bind() :
+    -first argument is this value.
+    -remaining arguments are given individually.
+    -it will return another function , we need to call that new function for excution.2+[] 

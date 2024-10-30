@@ -1,0 +1,40 @@
+Higher order functions :
+    - if a function accepting another function as an argument,
+    - or returns another function  i.e. known as Higher order function.
+Call back functions :
+    - if a function is passing as an argument is known as Call back function.
+syntax:  
+    function add(x,y){
+    console.log("I am add function");
+    console.log(x+y);
+}
+    function demo(a,b,c){
+    console.log(a,b,c);
+    a(b,c);
+}
+
+demo(add,60,89);
+-demo is Higher order function.
+-add is a Call back function.
+
+Generator function : 
+    -Generator function used to pause and resume the function.
+    -Generator function returns Generator object.
+    -next() is a method used to resume the function.
+    -yeild is a keyword used to  pause the function.
+    -yeild will return one object. That object contains two properties : 
+        -done : it represents wether the execution is completed or not.
+        -value : it is given value in the yeild keyword.
+syntax :
+    function* genFun(){
+    console.log("hii");
+    yield 100;
+    console.log("Hello");
+    yield 200;
+    console.log("Bye");
+}
+let genObj = genFun();
+
+console.log(genObj.next());
+console.log(genObj.next());
+console.log(genObj.next());

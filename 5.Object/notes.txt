@@ -1,0 +1,47 @@
+We can access property by two ways:
+    -dot notation (.) syntax - console.log(obj2.title);
+    -square Bracket [] syntax - console.log(obj2["title"]);
+
+There 3 ways we can declare key in Object:
+    -variable declaration - title : "samsung",
+    -String declaration - "price" : 75000,
+    -number declaration - 1:4.4,
+    
+There are two ways declare methods :
+    -inside the key - available : function (){
+                         console.log("currently available");
+                        },
+    -outside key (not using function keyword) -abc(){
+                                           console.log("i am function inside a object");
+                                        }, 
+
+How to  iterate the object :
+    -for in loop - for(let property in obj4){
+                    ljk console.log(property +":"+ obj4[property]);
+                    }
+
+Construstor :
+    -Construstor is a function used to create an Object.
+
+Method : 
+    -Method is a function declare in an Object.
+    -If we declare a function inside an Object i.e known as method.
+
+Object Default methods:
+    1. Object.keys() - it will return all the keys in the form of array.
+        eg. console.log(Object.keys(iphone));
+    2. Object.values() - it will return all the values in the form of array.
+        eg. console.log(Object.values(iphone));
+    3. Object.entries() - it will return both keys and values in the form of array.
+        eg. console.log(Object.entries(iphone));
+    4. Object.freeze() - it is used to freeze the object. we cannot add , delete and update the properties of the object.
+        eg. Object.freeze(samsung);
+    5. Object.seal() - it will seal the object. we cannot add or delete the properties but we can update the properties.
+        eg. Object.seal(samsung);
+    6. Object.isfrozen() - it will check the given  object is frozen or not and return the boolean value.
+        eg. Object.isfrozen(samsung);
+    7. Object.isSealed() - it will check the given object is sealed or not and return the boolean value.
+        eg. Object.isSealed(samsung);
+        -All the frozen elements are sealed but all the  sealed elements are not frozen.
+    8. Object.assign() - it is used to merge the object. first argument is targetting object remaining arguments are merging objects.
+        eg. console.log(Object.assign(obj1,extra));
