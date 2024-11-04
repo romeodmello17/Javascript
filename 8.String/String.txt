@@ -1,0 +1,54 @@
+We can defince String in four ways:
+    1. Single quotes
+        eg. let a = 'Amruta'
+    2. Double quotes
+        eg. let b = "Amruta"
+    3. Backticks
+        eg. let c = `Amruta`
+    4. Constructor
+        eg. let strObj = new String("Sharvari");
+            console.log(strObj);
+    
+Template literals aka Backticks:
+    - It is used to write multi line String
+    - It will allow interpolation by using syntax ${ }
+
+Interpolation:
+    - It means we can access variables , we can perform operations along with Strings.
+
+AutoBoxing:
+    - Primitive String not having any methods.
+    - When we try to  use methods in String, that String temporarily convert to String object.
+    - And it will inherit properties from its prototye.
+
+String property:
+    - length.
+        - It will return length of the String.
+
+String methods:
+    1. .toUpperCase():
+        - It will convert the String into Upper Case.
+    2. .toLowerCase():
+        - It will convert the String into Lower Case.
+    3. .trim():
+        - It will remove the empty spaces from the beginning and the end of the String not in between String.
+    4. .replace(arg1 , arg2):
+        - It will change first satisfied String.
+    5. .replaceAll(arg1 , arg2):
+        - It will replace all satisfied Strings.
+
+Searching methods:
+    1. .indexOf(arg1 , StartingIndex ,Optional):
+        - It will return the index of the given value.
+        - By default StartingIndex is 0.
+        - It wil Search in increasing order.
+    2. .lastIndexOf(arg1,StartingIndex,Optional):
+        - It will return the index of the given value.
+        - By default StartingIndex is last index number.
+        - It will start search in decreasing order.
+    3. .include():
+        - It will check wether given value is present in the String or not, and return boolean value for that.
+    4. .startsWith("i am"):
+        -
+    5. .endsWith("g"):
+        -
