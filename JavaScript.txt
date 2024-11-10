@@ -1,0 +1,380 @@
+//!types of functions
+//& Named function
+//if a function having a name is known  as named function
+
+function abc(a, b) {
+  console.log(a, b);
+}
+abc("hii", null);
+abc("bye", 40);
+
+/! Anonymous Function
+// Anonymous function is a function without a name.
+// It is used when we need to use a function only once.
+
+// function (){
+//     console.log("hii");
+
+// }
+
+//! function with  express
+//if we declare a function inside a variable i.e. known as function with expression
+
+let express = function () {
+  console.log("hii");
+  4;
+  return 500;
+};
+
+express();
+
+//! IIFE (Immediately Invoke function express)
+// IIFE is a function that is invoked immediately after it is defined.
+//if we  invoke the function immediately after the declaraction i.e known as IIFE.
+//it is represented by  two parenthesis ()()
+//first parenthesis for declaration
+//second parenthesis for invocation
+
+(function () {
+  console.log("IIFE");
+})();
+
+//! Nested function
+// A function defined inside another function is known as a nested function.
+// The nested function has access to the variables of the outer function.
+
+let a = 100;
+function outer() {
+  // let a = 10;
+  let b = 20;
+  console.log("I am Outer Fucntion");
+  inner();
+  function inner() {
+    // let a = 500;
+    console.log(a + b);
+    console.log(a);
+    console.log("I am Inner Fucntion");
+  }
+}
+outer();
+
+//* Scope chaining :
+// it is a mechanism in javascript how it looks for a variable.
+// it is also known as scope resolution.
+// first it will start searching from inner most scope , And end by global scope.
+// if the variable is not present in any scope then it will give reference error.
+
+//* Closure :
+// Closure is a scope. It will be created in inner function for outer function variable.
+// The advantage of the closure is , we can access outer function variable even though outer function stops executing.
+// Closure is not for all the outer function variables , only for which ever the variable is accessed in inner function.
+
+//! Arrow Function :
+// In place of function keyword we can use FAT ARROW (=>) to declare a function.
+// Advantge of arrow function is to reduce the syntax.
+
+// (x,y) => {
+//     ------------
+//     ------------ multiline code
+//     return value;
+// }
+
+// (x,y) => x+y; single line code
+// x => value -> single line with single parameter with return value.
+
+let arrow = () => {
+    console.log("I Am a Arrow Function");
+};
+arrow();
+
+let arrow2 = () => console.log("I am also a Arrow Function for single line code");
+arrow2();
+
+let arrow3 = () => 10;
+console.log(arrow3());
+
+let arrow4 = (x,y) => x+y;
+console.log(arrow4(10,40));
+
+let arrow5 = x => x;
+console.log(arrow5(69));
+
+Higher order functions :
+    - if a function accepting another function as an argument,
+    - or returns another function  i.e. known as Higher order function.
+Call back functions :
+    - if a function is passing as an argument is known as Call back function.
+syntax:  
+    function add(x,y){
+    console.log("I am add function");
+    console.log(x+y);
+}
+    function demo(a,b,c){
+    console.log(a,b,c);
+    a(b,c);
+}
+
+demo(add,60,89);
+-demo is Higher order function.
+-add is a Call back function.
+
+Generator function : 
+    -Generator function used to pause and resume the function.
+    -Generator function returns Generator object.
+    -next() is a method used to resume the function.
+    -yeild is a keyword used to  pause the function.
+    -yeild will return one object. That object contains two properties : 
+        -done : it represents wether the execution is completed or not.
+        -value : it is given value in the yeild keyword.
+syntax :
+    function* genFun(){
+    console.log("hii");
+    yield 100;
+    console.log("Hello");
+    yield 200;
+    console.log("Bye");
+}
+let genObj = genFun();
+
+console.log(genObj.next());
+console.log(genObj.next());
+console.log(genObj.next());
+
+Function methods: 
+
+call() , apply() ,bind() all these three methods are used to invoke  a function with specific this value along with other arguments.
+1. call() : 
+    -first argument is this value
+    -remaining arguments are given individually.
+    -it will invoke the function immediately.
+2. apply() :
+    -first argument is this value
+    -remaining arguments are given in the form of array.
+    -it will invoke the function immediately.
+3. bind() :
+    -first argument is this value.
+    -remaining arguments are given individually.
+    -it will return another function , we need to call that new function for excution.2+[] 
+
+function demo(time,day){
+    console.log("Class of " + this.title + " on " + time + " " +day);
+};
+
+demo("5pm","tuesday");
+demo.call(obj1 , "6pm","Friday");
+demo.apply(obj2,["7pm","Monday"]);
+let bindFunc = demo.bind(obj3, "8pm","Sunday");
+bindFunc();
+
+
+this :
+    -this is a keyword used to represent current object in Global -> window object.
+    -Function : it will represent as owner of the Function.
+    -Arrow Function : it will represent
+
+
+
+object : 
+    -object is a collection of properties.
+    -Each propertie is represent by key and value pairs.
+    -We can create object by using 4 ways :
+        -Literal way : let obj ={
+            key : value;
+        };
+        -function construtor : function TocreateObject(a, b, c) {
+                         this.title = a;
+                         this.price = b;
+                         this.rating = c;
+                    }
+
+                    let obj4 = new TocreateObject("Motorola", 649000, 2);
+                    console.log(obj4);
+        -Class construtor : class ObjectinClass {
+                            constructor(title, price, rating) {
+                              this.title = title;
+                              this.price = price;
+                              this.rating = rating;
+                            }
+                        }
+                        let obj6= new ObjectinClass("Vivo",2340000,0.7);
+        -Object constructor : let obj9 = new Object();
+                            console.log(obj9);
+
+We can access property by two ways:
+    -dot notation (.) syntax - console.log(obj2.title);
+    -square Bracket [] syntax - console.log(obj2["title"]);
+
+There 3 ways we can declare key in Object:
+    -variable declaration - title : "samsung",
+    -String declaration - "price" : 75000,
+    -number declaration - 1:4.4,
+    
+There are two ways declare methods :
+    -inside the key - available : function (){
+                         console.log("currently available");
+                        },
+    -outside key (not using function keyword) -abc(){
+                                           console.log("i am function inside a object");
+                                        }, 
+
+How to  iterate the object :
+    -for in loop - for(let property in obj4){
+                    ljk console.log(property +":"+ obj4[property]);
+                    }
+
+Construstor :
+    -Construstor is a function used to create an Object.
+
+Method : 
+    -Method is a function declare in an Object.
+    -If we declare a function inside an Object i.e known as method.
+
+Object Default methods:
+    1. Object.keys() - it will return all the keys in the form of array.
+        eg. console.log(Object.keys(iphone));
+    2. Object.values() - it will return all the values in the form of array.
+        eg. console.log(Object.values(iphone));
+    3. Object.entries() - it will return both keys and values in the form of array.
+        eg. console.log(Object.entries(iphone));
+    4. Object.freeze() - it is used to freeze the object. we cannot add , delete and update the properties of the object.
+        eg. Object.freeze(samsung);
+    5. Object.seal() - it will seal the object. we cannot add or delete the properties but we can update the properties.
+        eg. Object.seal(samsung);
+    6. Object.isfrozen() - it will check the given  object is frozen or not and return the boolean value.
+        eg. Object.isfrozen(samsung);
+    7. Object.isSealed() - it will check the given object is sealed or not and return the boolean value.
+        eg. Object.isSealed(samsung);
+        -All the frozen elements are sealed but all the  sealed elements are not frozen.
+    8. Object.assign() - it is used to merge the object. first argument is targetting object remaining arguments are merging objects.
+        eg. console.log(Object.assign(obj1,extra));
+
+
+How many ways we can declare a number?
+    -Two ways :
+        1. Literal way 
+            eg. let a = 50;
+        2. Number constructor
+            eg. let b = new Number(100);
+
+AutoBoxing:
+    - Generally primitive numbers are not having any methods.
+    - When we try to use any methods on primitive numbers, it will automatically convert to temporarily Number Object
+    - It will inherit properties from its prototye.
+
+Number Constructor Methods:
+    1. valueOf():
+        - it will return value of the number.
+    2. toString():
+        - it will convert the number to String.
+    3. toFixed():
+        - to Fix the number after decimal point.
+    4. toPrecision():
+        - to precise the whole number.
+    5. toExponential():
+        - it will convert number in power values
+
+We can defince String in four ways:
+    1. Single quotes
+        eg. let a = 'Amruta'
+    2. Double quotes
+        eg. let b = "Amruta"
+    3. Backticks
+        eg. let c = `Amruta`
+    4. Constructor
+        eg. let strObj = new String("Sharvari");
+            console.log(strObj);
+    
+Template literals aka Backticks:
+    - It is used to write multi line String
+    - It will allow interpolation by using syntax ${ }
+
+Interpolation:
+    - It means we can access variables , we can perform operations along with Strings.
+
+AutoBoxing:
+    - Primitive String not having any methods.
+    - When we try to  use methods in String, that String temporarily convert to String object.
+    - And it will inherit properties from its prototye.
+
+String property:
+    - length.
+        - It will return length of the String.
+
+String methods:
+    1. .toUpperCase():
+        - It will convert the String into Upper Case.
+    2. .toLowerCase():
+        - It will convert the String into Lower Case.
+    3. .trim():
+        - It will remove the empty spaces from the beginning and the end of the String not in between String.
+    4. .replace(arg1 , arg2):
+        - It will change first satisfied String.
+    5. .replaceAll(arg1 , arg2):
+        - It will replace all satisfied Strings.
+
+Searching methods:
+    1. .indexOf(arg1 , StartingIndex ,Optional):
+        - It will return the index of the given value.
+        - By default StartingIndex is 0.
+        - It wil Search in increasing order.
+    2. .lastIndexOf(arg1,StartingIndex,Optional):
+        - It will return the index of the given value.
+        - By default StartingIndex is last index number.
+        - It will start search in decreasing order.
+    3. .include():
+        - It will check wether given value is present in the String or not, and return boolean value for that.
+    4. .startsWith("i am"):
+        -
+    5. .endsWith("g"):
+        -
+
+
+Seperating Characters and Strings method:
+    1. charAt(index):
+        - It is used to get single Character from the String.
+    2. substring(startingIndex,endingIndex):
+        - It is used to get multiple Characters from the String.
+        - It will not accept negative index.
+        - Order of index numbers does'nt matter.
+    3. slice(startingIndex,endingIndex):
+        - It is used to get multiple Characters from th String.
+        - It will accept negative index.
+        - Order of index numbers matters here.
+
+String to Array:
+    1. split(spliting_Character):
+        - 
+    2. boolean:
+        - Two ways we can declare boolean:
+            1. literal way: let g = true;
+            2. boolean function: let f = Boolean(123);
+        
+Falsy values :
+    1. false
+    2. 0
+    3. ""
+    4. undefined
+    5. null
+    6. NaN
+
+Difference :
+
+undefined :
+    1. If the declaration is done , initialization is not done means undefined.
+    2. typeOf undefined is undefined.
+
+
+null : 
+    1. Intentional absence is known as null.
+    2. typeOf null is Object. In javaScript null is representing absence of Object.
+
+    
+    3. BigInt:
+        - It is used for orbitary precision. That means handling larger number with accuracy. handling larger number with more precision.
+        Two ways we can declare BigInt:
+            - literal way with suffix as (n) : let g = 12345n;
+            - function way with function BigInt(n); : let g = BigInt(2344576);
+
+    4. symbol:
+        - It is unique and immutable value used as key in Object.
+        
