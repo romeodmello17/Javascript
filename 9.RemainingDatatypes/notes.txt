@@ -1,0 +1,50 @@
+
+Seperating Characters and Strings method:
+    1. charAt(index):
+        - It is used to get single Character from the String.
+    2. substring(startingIndex,endingIndex):
+        - It is used to get multiple Characters from the String.
+        - It will not accept negative index.
+        - Order of index numbers does'nt matter.
+    3. slice(startingIndex,endingIndex):
+        - It is used to get multiple Characters from th String.
+        - It will accept negative index.
+        - Order of index numbers matters here.
+
+String to Array:
+    1. split(spliting_Character):
+        - 
+    2. boolean:
+        - Two ways we can declare boolean:
+            1. literal way: let g = true;
+            2. boolean function: let f = Boolean(123);
+        
+Falsy values :
+    1. false
+    2. 0
+    3. ""
+    4. undefined
+    5. null
+    6. NaN
+
+Difference :
+
+undefined :
+    1. If the declaration is done , initialization is not done means undefined.
+    2. typeOf undefined is undefined.
+
+
+null : 
+    1. Intentional absence is known as null.
+    2. typeOf null is Object. In javaScript null is representing absence of Object.
+
+    
+    3. BigInt:
+        - It is used for orbitary precision. That means handling larger number with accuracy. handling larger number with more precision.
+        Two ways we can declare BigInt:
+            - literal way with suffix as (n) : let g = 12345n;
+            - function way with function BigInt(n); : let g = BigInt(2344576);
+
+    4. symbol:
+        - It is unique and immutable value used as key in Object.
+        
